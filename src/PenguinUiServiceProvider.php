@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use PenguinUI\Console\Commands\PenguinInstallCommand;
 use PenguinUi\PenguinUi;
+use PenguinUi\View\Components\Button;
+
 class PenguinUiServiceProvider extends ServiceProvider
 {
     /**
@@ -30,6 +32,8 @@ class PenguinUiServiceProvider extends ServiceProvider
         Blade::component('BladeUI\Icons\Components\Icon', 'svg');
 
         $prefix = config('penguin-ui.prefix');
+
+        Blade::component($prefix . 'button', Button::class);
 
     }
     public function registerBladeDirectives(): void
