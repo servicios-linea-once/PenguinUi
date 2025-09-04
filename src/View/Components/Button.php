@@ -11,6 +11,7 @@ class Button extends Component
 {
     use ButtonColor;
     public string $uuid;
+    public string $classButton;
     public string $tooltipPosition = 'lg:tooltip-top';
 
     public function __construct(
@@ -33,6 +34,8 @@ class Button extends Component
         public ?string $color = 'primary',
     ) {
         $this->uuid = "penguin" . md5(serialize($this)) . $id;
+        $this->classButton = $this->setClassButton();
+
 //        $this->tooltip = $this->tooltip ?? $this->tooltipLeft ?? $this->tooltipRight ?? $this->tooltipBottom;
 //        $this->tooltipPosition = $this->tooltipLeft ? 'lg:tooltip-left' : ($this->tooltipRight ? 'lg:tooltip-right' : ($this->tooltipBottom ? 'lg:tooltip-bottom' : 'lg:tooltip-top'));
     }
@@ -48,7 +51,7 @@ class Button extends Component
 
     public function render(): View|Closure|string
     {
-        $class = $this->setClassButton();
+
         return <<<'BLADE'
                 @if($link)
                     <a href="{!! $link !!}"
@@ -58,7 +61,7 @@ class Button extends Component
 
                     wire:key="{{ $uuid }}"
                     {{ $attributes->whereDoesntStartWith('class')->merge(['type' => 'button']) }}
-                    {{ $attributes->class([$class]) }}
+                    {{ $attributes->class([$classButton,'cursor-pointer']) }}
 
                     @if($link && $external)
                         target="_blank"

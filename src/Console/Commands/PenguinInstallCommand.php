@@ -72,6 +72,7 @@ class PenguinInstallCommand extends Command
             \n
             /* penguinUI */
             @source "../../vendor/kirinthor/penguin-ui/src/View/Components/**/*.php";
+            @source "../../vendor/kirinthor/penguin-ui/src/Traits/**/*.php";
             \n
             /**
                 Las líneas de arriba están intactas.
