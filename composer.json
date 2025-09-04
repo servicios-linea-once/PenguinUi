@@ -1,7 +1,6 @@
 {
   "name": "kirinthor/penguin-ui",
   "description": "Espléndido UI Componentes para LiveWire impulsado por Penguin ui y Alpine JS",
-  "minimum-stability": "dev",
   "license": "MIT",
   "authors": [
     {
@@ -50,10 +49,7 @@
     "laravel": {
       "providers": [
         "PenguinUi\\PenguinUiServiceProvider"
-      ],
-      "aliases": {
-        "PenguinUi": "Mary\\Facades\\Mary"
-      }
+      ]
     }
   }
 }
