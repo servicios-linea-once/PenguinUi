@@ -76,7 +76,7 @@ class PenguinUiServiceProvider extends ServiceProvider
     }
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/penguin-ui.php.php', 'penguin');
+        $this->mergeConfigFrom(__DIR__ . '/../config/penguin-ui.php', 'penguin');
 
         // Register the service the package provides.
         $this->app->singleton('penguin', function ($app) {
