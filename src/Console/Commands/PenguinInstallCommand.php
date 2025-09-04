@@ -69,12 +69,14 @@ class PenguinInstallCommand extends Command
         $css = File::get($cssPath);
 
         $penguin = <<<EOT
-            \n\n
+            \n
+            /* penguinUI */
+            @source "../../vendor/kirinthor/penguin-ui/src/View/Components/**/*.php";
+            \n
             /**
                 Las líneas de arriba están intactas.
                 Las líneas a continuación fueron agregadas por PenguinUi Installer.
             */
-
             /** theme UI */
              @theme {
                 /* light theme */
@@ -114,10 +116,6 @@ class PenguinInstallCommand extends Command
                 /* border radius */
                 --radius-radius: var(--radius-sm);
             }  
-
-            /* penguinUI */
-            @source "../../vendor/kirinthor/penguin-ui/src/View/Components/**/*.php";
-
             /* Theme toggle */
             @custom-variant dark (&:where(.dark, .dark *));
             EOT;
