@@ -45,12 +45,14 @@
       "PenguinUi\\": "src/"
     }
   },
-
   "extra": {
     "laravel": {
       "providers": [
         "PenguinUi\\PenguinUiServiceProvider"
-      ]
+      ],
+      "aliases": {
+        "PenguinUi": "PenguinUi\\Facades\\PenguinUi"
+      }
     }
   }
 }
