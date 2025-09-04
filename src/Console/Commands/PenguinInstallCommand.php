@@ -56,9 +56,9 @@ class PenguinInstallCommand extends Command
         /**
          * Install PenguinUI + Tailwind
          */
-        $this->info("\nInstalación de PenguinUI + Tailwind...\n");
+        $this->info("\nInstalación de PenguinUI + TailwindCss + Iconify ...\n");
 
-        Process::run("$packageManagerCommand alpinejs @alpinejs/focus @alpinejs/mask @alpinejs/collapse tailwindcss @tailwindcss/vite", function (string $type, string $output) {
+        Process::run("$packageManagerCommand alpinejs @alpinejs/focus @alpinejs/mask @alpinejs/collapse tailwindcss @tailwindcss/vite @iconify/tailwind4 @iconify/json", function (string $type, string $output) {
             echo $output;
         })->throw();
 
@@ -70,14 +70,15 @@ class PenguinInstallCommand extends Command
 
         $penguin = <<<EOT
             \n
-            /* penguinUI */
-            @source "../../vendor/kirinthor/penguin-ui/src/View/Components/**/*.php";
-            @source "../../vendor/kirinthor/penguin-ui/src/Traits/**/*.php";
-            \n
             /**
                 Las líneas de arriba están intactas.
                 Las líneas a continuación fueron agregadas por PenguinUi Installer.
             */
+            \n
+            /* penguinUI */
+            @plugin "@iconify/tailwind4";
+            @source "../../vendor/kirinthor/penguin-ui/src/View/Components/**/*.php";
+            @source "../../vendor/kirinthor/penguin-ui/src/Traits/**/*.php";
             /** theme UI */
              @theme {
                 /* light theme */

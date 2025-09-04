@@ -61,7 +61,7 @@ class Button extends Component
 
                     wire:key="{{ $uuid }}"
                     {{ $attributes->whereDoesntStartWith('class')->merge(['type' => 'button']) }}
-                    {{ $attributes->class([$classButton,'cursor-pointer']) }}
+                    {{ $attributes->class(['inline-flex justify-center items-center gap-2 cursor-pointer',$classButton]) }}
 
                     @if($link && $external)
                         target="_blank"
@@ -86,7 +86,7 @@ class Button extends Component
                     <!-- ICON -->
                     @if($icon)
                         <span class="block" @if($spinner) wire:loading.class="hidden" wire:target="{{ $spinnerTarget() }}" @endif>
-                          
+                          <span class="iconify {{$icon}}"></span>
                         </span>
                     @endif
 
@@ -105,7 +105,7 @@ class Button extends Component
                     <!-- ICON RIGHT -->
                     @if($iconRight)
                         <span class="block" @if($spinner) wire:loading.class="hidden" wire:target="{{ $spinnerTarget() }}" @endif>
-                            
+                            <span class="iconify {{$iconRight}}"></span>
                         </span>
                     @endif
 
