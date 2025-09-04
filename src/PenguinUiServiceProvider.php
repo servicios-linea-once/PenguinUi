@@ -5,6 +5,7 @@ namespace PenguinUi;
 use Arr;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use PenguinUI\Console\Commands\PenguinInstallCommand;
 use PenguinUi\PenguinUi;
 class PenguinUiServiceProvider extends ServiceProvider
 {
@@ -100,6 +101,8 @@ class PenguinUiServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../config/penguin-ui.php.php' => config_path('penguin-ui.php'),
         ], 'penguin.config');
+
+        $this->commands([PenguinInstallCommand::class]);
 
 //        $this->commands([MaryInstallCommand::class, MaryBootcampCommand::class]);
     }
