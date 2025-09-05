@@ -142,4 +142,20 @@
   @apply rounded-radius w-fit border border-danger bg-danger px-2 py-1 text-xs font-medium text-on-danger dark:border-danger dark:bg-danger dark:text-on-danger;
 }
 
+.alert-info {
+  @apply relative w-full overflow-hidden rounded-sm border border-blue-500 bg-surface text-on-surface dark:bg-surface-dark dark:text-on-surface-dark;
+}
+
+.alert-success {
+  @apply relative w-full overflow-hidden rounded-sm border border-green-500 bg-surface text-on-surface dark:bg-surface-dark dark:text-on-surface-dark;
+}
+
+.alert-warning {
+  @apply relative w-full overflow-hidden rounded-sm border border-yellow-500 bg-surface text-on-surface dark:bg-surface-dark dark:text-on-surface-dark;
+}
+
+.alert-danger {
+  @apply relative w-full overflow-hidden rounded-sm border border-red-500 bg-surface text-on-surface dark:bg-surface-dark dark:text-on-surface-dark;
+}
+
 /*# sourceMappingURL=app.css.map */

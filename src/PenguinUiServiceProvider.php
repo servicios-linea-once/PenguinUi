@@ -6,6 +6,7 @@ use Arr;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use PenguinUi\View\Components\Accordion;
+use PenguinUi\View\Components\Alert;
 use PenguinUi\View\Components\Collapse;
 use PenguinUI\Console\Commands\PenguinInstallCommand;
 use PenguinUi\PenguinUi;
@@ -36,9 +37,10 @@ class PenguinUiServiceProvider extends ServiceProvider
         $prefix = config('penguin-ui.prefix');
 
         Blade::component($prefix . 'accordion', Accordion::class);
+        Blade::component($prefix . 'accordion-item', Collapse::class);
+        Blade::component($prefix . 'alert', Alert::class);
         Blade::component($prefix . 'button', Button::class);
 
-        Blade::component($prefix . 'collapse', Collapse::class);
 
     }
     public function registerBladeDirectives(): void

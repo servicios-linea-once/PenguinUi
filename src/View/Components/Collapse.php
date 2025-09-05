@@ -5,6 +5,7 @@ namespace PenguinUi\View\Components;
 use Illuminate\View\Component;
 use Illuminate\View\View;
 
+//accordion-item
 class Collapse extends Component
 {    public string $uuid;
 
