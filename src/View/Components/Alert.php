@@ -42,7 +42,7 @@ class Alert extends Component
                     wire:key="{{ $uuid }}"
                     {{ $attributes->whereDoesntStartWith('class') }}
                     {{ $attributes->class(['shadow-lg' => $shadow])}}
-                    x-data="{ show: true }" x-show="show"
+                    x-data="{ alertIsVisible: true }" x-show="alertIsVisible"
                 >
                     <div class="flex w-full items-center gap-2 bg-info/10 p-4">
                         @if($icon)
@@ -71,7 +71,7 @@ class Alert extends Component
                         @endif
                        
                         @if($dismissible)
-                            <span class="icon-[line-md--close] size-4 shrink-0 ml-auto" aria-label="dismiss alert" @click="alertIsVisible = false"></span>
+                            <span class="icon-[line-md--close] size-4 shrink-0 ml-auto cursor-pointer" aria-label="Alerta de despedida" @click="alertIsVisible = false"></span>
                         @endif
                     </div>
                 </div>
