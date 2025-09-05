@@ -47,7 +47,7 @@ class Alert extends Component
                     <div class="flex w-full items-center gap-2 bg-info/10 p-4">
                         @if($icon)
                             <div class="bg-blue-500/15 text-blue-500 rounded-full p-1" aria-hidden="true">
-                                <span class="{{$icon}}"></span>
+                                <span class="{{$icon}} size-6"></span>
                             </div>
                         @endif
                         @if($actions)
@@ -71,11 +71,7 @@ class Alert extends Component
                         @endif
                        
                         @if($dismissible)
-                            <button class="ml-auto" aria-label="dismiss alert">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="2.5" class="size-4 shrink-0">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-                                </svg>
-                            </button>
+                            <span class="icon-[line-md--close] size-4 shrink-0 ml-auto" aria-label="dismiss alert" @click="alertIsVisible = false"></span>
                         @endif
                     </div>
                 </div>
