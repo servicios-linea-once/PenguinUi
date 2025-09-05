@@ -78,7 +78,7 @@ class PenguinInstallCommand extends Command
             /* penguinUI */
             @plugin "@iconify/tailwind4";
             @source "../../vendor/kirinthor/penguin-ui/src/View/Components/**/*.php";
-            @source "../../vendor/kirinthor/penguin-ui/src/Traits/**/*.php";
+            @import "../../vendor/kirinthor/penguin-ui/resources/sass/app.css";
             /** theme UI */
              @theme {
                 /* light theme */

@@ -4,14 +4,15 @@ namespace PenguinUi\View\Components;
 
 use Closure;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Arr;
 use Illuminate\View\Component;
 use PenguinUi\Traits\ButtonColor;
 
 class Button extends Component
 {
-    use ButtonColor;
     public string $uuid;
     public string $classButton;
+    public string $badgeClasses;
     public string $tooltipPosition = 'lg:tooltip-top';
 
     public function __construct(
@@ -25,7 +26,6 @@ class Button extends Component
         public ?bool $noWireNavigate = false,
         public ?bool $responsive = false,
         public ?string $badge = null,
-        public ?string $badgeClasses = null,
         public ?string $tooltip = null,
         public ?string $tooltipLeft = null,
         public ?string $tooltipRight = null,
@@ -35,6 +35,7 @@ class Button extends Component
     ) {
         $this->uuid = "penguin" . md5(serialize($this)) . $id;
         $this->classButton = $this->setClassButton();
+        $this->badgeClasses = $this->setBadgeClass();
 
 //        $this->tooltip = $this->tooltip ?? $this->tooltipLeft ?? $this->tooltipRight ?? $this->tooltipBottom;
 //        $this->tooltipPosition = $this->tooltipLeft ? 'lg:tooltip-left' : ($this->tooltipRight ? 'lg:tooltip-right' : ($this->tooltipBottom ? 'lg:tooltip-bottom' : 'lg:tooltip-top'));
@@ -80,13 +81,13 @@ class Button extends Component
 
                     <!-- SPINNER LEFT -->
                     @if($spinner && !$iconRight)
-                        <span wire:loading wire:target="{{ $spinnerTarget() }}" class="loading loading-spinner w-5 h-5"></span>
+                        <span wire:loading wire:target="{{ $spinnerTarget() }}" class="icon-[eos-icons--bubble-loading] w-5 h-5"></span>
                     @endif
 
                     <!-- ICON -->
                     @if($icon)
                         <span class="block" @if($spinner) wire:loading.class="hidden" wire:target="{{ $spinnerTarget() }}" @endif>
-                          <span class="iconify {{$icon}}"></span>
+                          <span class="{{$icon}}"></span>
                         </span>
                     @endif
 
@@ -96,7 +97,7 @@ class Button extends Component
                             {{ $label }}
                         </span>
                         @if(strlen($badge ?? '') > 0)
-                            <span class="badge badge-sm {{ $badgeClasses }}">{{ $badge }}</span>
+                            <span class="{{ $badgeClasses }}">{{ $badge }}</span>
                         @endif
                     @else
                         {{ $slot }}
@@ -105,13 +106,13 @@ class Button extends Component
                     <!-- ICON RIGHT -->
                     @if($iconRight)
                         <span class="block" @if($spinner) wire:loading.class="hidden" wire:target="{{ $spinnerTarget() }}" @endif>
-                            <span class="iconify {{$iconRight}}"></span>
+                            <span class="{{$iconRight}}"></span>
                         </span>
                     @endif
 
                     <!-- SPINNER RIGHT -->
                     @if($spinner && $iconRight)
-                        <span wire:loading wire:target="{{ $spinnerTarget() }}" class="loading loading-spinner w-5 h-5"></span>
+                        <span wire:loading wire:target="{{ $spinnerTarget() }}" class="icon-[eos-icons--bubble-loading] w-5 h-5"></span>
                     @endif
 
                 @if(!$link)
@@ -123,9 +124,32 @@ class Button extends Component
     }
     protected function setClassButton()
     {
-        return match ($this->variant){
-            'default' => $this->setDefaultColor($this->color),
-        };
+        $class='';
+        $array = [
+            'primary' ,
+            'secondary' ,
+            'alternate' ,
+            'inverse' ,
+            'info' ,
+            'danger' ,
+            'warning',
+            'success',
+        ];
+        if (! Arr::has($array,$this->color)){
+            $color = 'primary';
+        }
+        switch ($this->variant){
+            case 'outline':
+                $class = "button-outline-". $this->color;
+                break;
+            case 'ghost':
+                $class = "button-ghost-". $this->color;
+                break;
+            default:
+                $class = "button-". $this->color;
+                break;
+        }
+        return $class;
     }
 
 
