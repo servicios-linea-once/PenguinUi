@@ -101,6 +101,9 @@ class Button extends Component
                         @endif
                     @else
                         {{ $slot }}
+                        @if(strlen($badge ?? '') > 0)
+                            <span class="ml-1 {{ $badgeClasses }}">{{ $badge }}</span>
+                        @endif
                     @endif
 
                     <!-- ICON RIGHT -->
