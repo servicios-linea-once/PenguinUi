@@ -5,6 +5,8 @@ namespace PenguinUi;
 use Arr;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Mary\View\Components\Accordion;
+use Mary\View\Components\Collapse;
 use PenguinUI\Console\Commands\PenguinInstallCommand;
 use PenguinUi\PenguinUi;
 use PenguinUi\View\Components\Button;
@@ -33,7 +35,10 @@ class PenguinUiServiceProvider extends ServiceProvider
 
         $prefix = config('penguin-ui.prefix');
 
+        Blade::component($prefix . 'accordion', Accordion::class);
         Blade::component($prefix . 'button', Button::class);
+
+        Blade::component($prefix . 'collapse', Collapse::class);
 
     }
     public function registerBladeDirectives(): void
