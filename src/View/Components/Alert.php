@@ -46,8 +46,8 @@ class Alert extends Component
                 >
                     <div class="flex w-full items-center gap-2 bg-info/10 p-4">
                         @if($icon)
-                            <div class="bg-blue-500/15 text-blue-500 rounded-full p-1" aria-hidden="true">
-                                <span class="{{$icon}} size-6"></span>
+                            <div class="bg-blue-500/15 text-blue-500 rounded-full p-1 flex items-center" aria-hidden="true">
+                                <span class="{{$icon}} size-6 sefl-center"></span>
                             </div>
                         @endif
                         @if($actions)
