@@ -15,19 +15,19 @@
 }
 
 .button-info {
-  @apply whitespace-nowrap rounded-radius bg-info border border-info px-4 py-2 text-sm font-medium tracking-wide text-onInfo transition hover:opacity-75 text-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-info active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:bg-info dark:border-info dark:text-onInfo dark:focus-visible:outline-info;
+  @apply whitespace-nowrap rounded-radius bg-info border border-info px-4 py-2 text-sm font-medium tracking-wide text-on-info transition hover:opacity-75 text-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-info active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:bg-info dark:border-info dark:text-on-info dark:focus-visible:outline-info;
 }
 
 .button-danger {
-  @apply whitespace-nowrap rounded-radius bg-danger border border-danger px-4 py-2 text-sm font-medium tracking-wide text-onDanger transition hover:opacity-75 text-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-danger active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:bg-danger dark:border-danger dark:text-onDanger dark:focus-visible:outline-danger;
+  @apply whitespace-nowrap rounded-radius bg-danger border border-danger px-4 py-2 text-sm font-medium tracking-wide text-on-danger transition hover:opacity-75 text-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-danger active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:bg-danger dark:border-danger dark:text-on-danger dark:focus-visible:outline-danger;
 }
 
 .button-warning {
-  @apply whitespace-nowrap rounded-radius bg-warning border border-warning px-4 py-2 text-sm font-medium tracking-wide text-onWarning transition hover:opacity-75 text-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-warning active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:bg-warning dark:border-warning dark:text-onWarning dark:focus-visible:outline-warning;
+  @apply whitespace-nowrap rounded-radius bg-warning border border-warning px-4 py-2 text-sm font-medium tracking-wide text-on-warning transition hover:opacity-75 text-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-warning active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:bg-warning dark:border-warning dark:text-on-warning dark:focus-visible:outline-warning;
 }
 
 .button-success {
-  @apply whitespace-nowrap rounded-radius bg-success border border-success px-4 py-2 text-sm font-medium tracking-wide text-onSuccess transition hover:opacity-75 text-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:bg-success dark:border-success dark:text-onSuccess dark:focus-visible:outline-success;
+  @apply whitespace-nowrap rounded-radius bg-success border border-success px-4 py-2 text-sm font-medium tracking-wide text-on-success transition hover:opacity-75 text-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:bg-success dark:border-success dark:text-on-success dark:focus-visible:outline-success;
 }
 
 .button-outline-primary {
@@ -108,6 +108,38 @@
 
 .button-xl {
   @apply text-lg;
+}
+
+.badge {
+  @apply rounded-radius w-fit border border-outline bg-surface-alt px-2 py-1 text-xs font-medium text-on-surface dark:border-outline-dark dark:bg-surface-dark-alt dark:text-on-surface-dark;
+}
+
+.badge-inverse {
+  @apply rounded-radius w-fit border border-outline-dark bg-surface-dark-alt px-2 py-1 text-xs font-medium text-on-surface-dark dark:border-outline dark:bg-surface-alt dark:text-on-surface;
+}
+
+.badge-primary {
+  @apply rounded-radius w-fit border border-primary bg-primary px-2 py-1 text-xs font-medium text-on-primary dark:border-primary-dark dark:bg-primary-dark dark:text-on-primary;
+}
+
+.badge-secondary {
+  @apply rounded-radius w-fit border border-secondary bg-secondary px-2 py-1 text-xs font-medium text-on-secondary dark:border-secondary-dark dark:bg-secondary-dark dark:text-on-secondary-dark;
+}
+
+.badge-info {
+  @apply rounded-radius w-fit border border-info bg-info px-2 py-1 text-xs font-medium text-on-info dark:border-info dark:bg-info dark:text-on-info;
+}
+
+.badge-success {
+  @apply rounded-radius w-fit border border-success bg-success px-2 py-1 text-xs font-medium text-on-success dark:border-success dark:bg-success dark:text-on-success;
+}
+
+.badge-warning {
+  @apply rounded-radius w-fit border border-warning bg-warning px-2 py-1 text-xs font-medium text-on-warning dark:border-warning dark:bg-warning dark:text-on-warning;
+}
+
+.badge-danger {
+  @apply rounded-radius w-fit border border-danger bg-danger px-2 py-1 text-xs font-medium text-on-danger dark:border-danger dark:bg-danger dark:text-on-danger;
 }
 
 /*# sourceMappingURL=app.css.map */

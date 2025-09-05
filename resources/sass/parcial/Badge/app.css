@@ -1,0 +1,33 @@
+.badge {
+  @apply rounded-radius w-fit border border-outline bg-surface-alt px-2 py-1 text-xs font-medium text-on-surface dark:border-outline-dark dark:bg-surface-dark-alt dark:text-on-surface-dark;
+}
+
+.badge-inverse {
+  @apply rounded-radius w-fit border border-outline-dark bg-surface-dark-alt px-2 py-1 text-xs font-medium text-on-surface-dark dark:border-outline dark:bg-surface-alt dark:text-on-surface;
+}
+
+.badge-primary {
+  @apply rounded-radius w-fit border border-primary bg-primary px-2 py-1 text-xs font-medium text-on-primary dark:border-primary-dark dark:bg-primary-dark dark:text-on-primary;
+}
+
+.badge-secondary {
+  @apply rounded-radius w-fit border border-secondary bg-secondary px-2 py-1 text-xs font-medium text-on-secondary dark:border-secondary-dark dark:bg-secondary-dark dark:text-on-secondary-dark;
+}
+
+.badge-info {
+  @apply rounded-radius w-fit border border-info bg-info px-2 py-1 text-xs font-medium text-on-info dark:border-info dark:bg-info dark:text-on-info;
+}
+
+.badge-success {
+  @apply rounded-radius w-fit border border-success bg-success px-2 py-1 text-xs font-medium text-on-success dark:border-success dark:bg-success dark:text-on-success;
+}
+
+.badge-warning {
+  @apply rounded-radius w-fit border border-warning bg-warning px-2 py-1 text-xs font-medium text-on-warning dark:border-warning dark:bg-warning dark:text-on-warning;
+}
+
+.badge-danger {
+  @apply rounded-radius w-fit border border-danger bg-danger px-2 py-1 text-xs font-medium text-on-danger dark:border-danger dark:bg-danger dark:text-on-danger;
+}
+
+/*# sourceMappingURL=app.css.map */

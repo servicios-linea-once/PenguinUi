@@ -35,6 +35,7 @@ class Button extends Component
     ) {
         $this->uuid = "penguin" . md5(serialize($this)) . $id;
         $this->classButton = $this->setClassButton();
+        $this->badgeClasses = 'badge';
 
 //        $this->tooltip = $this->tooltip ?? $this->tooltipLeft ?? $this->tooltipRight ?? $this->tooltipBottom;
 //        $this->tooltipPosition = $this->tooltipLeft ? 'lg:tooltip-left' : ($this->tooltipRight ? 'lg:tooltip-right' : ($this->tooltipBottom ? 'lg:tooltip-bottom' : 'lg:tooltip-top'));
