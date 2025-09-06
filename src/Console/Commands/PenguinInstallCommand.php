@@ -155,7 +155,11 @@ class PenguinInstallCommand extends Command
      */
     public function askForVolt(): string
     {
-        return select('Instalar también `livewire/volt` ?', ['Yes', 'No'], hint: 'No importa cuál sea su elección, siempre se instala `livewire/livewire`');
+        return select(
+            label: 'Instalar también `livewire/volt` ?',
+            options: ['Yes', 'No'],
+            default: '1',
+            hint: 'No importa cuál sea su elección, siempre se instala `livewire/livewire`');
     }
 
     public function checkForLaravelVersion(): void
