@@ -24,7 +24,7 @@ class Avatar extends Component
         public ?bool $badge = false,
 
     ) {
-        $this->uuid = "penguin" . md5(serialize($this)) . $id;
+        $this->uuid = "penguin-" . md5(serialize($this)) . $id;
         $this->classzise = $this->setSizeClass();
     }
 

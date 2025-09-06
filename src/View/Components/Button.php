@@ -33,7 +33,7 @@ class Button extends Component
         public ?string $variant = 'default',
         public ?string $color = 'primary',
     ) {
-        $this->uuid = "penguin" . md5(serialize($this)) . $id;
+        $this->uuid = "penguin-" . md5(serialize($this)) . $id;
         $this->classButton = $this->setClassButton();
         $this->badgeClasses = 'badge';
 
