@@ -8,10 +8,11 @@ use Illuminate\Support\ServiceProvider;
 use PenguinUi\View\Components\Accordion;
 use PenguinUi\View\Components\Alert;
 use PenguinUi\View\Components\Avatar;
+use PenguinUi\View\Components\Badge;
+use PenguinUi\View\Components\Button;
 use PenguinUi\View\Components\Collapse;
 use PenguinUI\Console\Commands\PenguinInstallCommand;
 use PenguinUi\PenguinUi;
-use PenguinUi\View\Components\Button;
 
 class PenguinUiServiceProvider extends ServiceProvider
 {
@@ -41,6 +42,7 @@ class PenguinUiServiceProvider extends ServiceProvider
         Blade::component($prefix . 'accordion-item', Collapse::class);
         Blade::component($prefix . 'alert', Alert::class);
         Blade::component($prefix . 'avatar', Avatar::class);
+        Blade::component($prefix . 'badge', Badge::class);
         Blade::component($prefix . 'button', Button::class);
 
 
