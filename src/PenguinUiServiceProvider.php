@@ -9,7 +9,9 @@ use PenguinUi\View\Components\Accordion;
 use PenguinUi\View\Components\Alert;
 use PenguinUi\View\Components\Avatar;
 use PenguinUi\View\Components\Badge;
+use PenguinUi\View\Components\Breadcrumbs;
 use PenguinUi\View\Components\Button;
+use PenguinUi\View\Components\Calendar;
 use PenguinUi\View\Components\Collapse;
 use PenguinUI\Console\Commands\PenguinInstallCommand;
 use PenguinUi\PenguinUi;
@@ -43,7 +45,9 @@ class PenguinUiServiceProvider extends ServiceProvider
         Blade::component($prefix . 'alert', Alert::class);
         Blade::component($prefix . 'avatar', Avatar::class);
         Blade::component($prefix . 'badge', Badge::class);
+        Blade::component($prefix . 'breadcrumbs', Breadcrumbs::class);
         Blade::component($prefix . 'button', Button::class);
+        Blade::component($prefix . 'calendar', Calendar::class);
 
 
     }
