@@ -17,7 +17,7 @@ class PenguinInstallCommand extends Command
 
     public function handle()
     {
-        $this->info("️😎 PenguinUI instalador");
+        $this->info("️😎 Instalador de PenguinUI 😎");
 
         // Laravel 12+
         $this->checkForLaravelVersion();
@@ -48,8 +48,6 @@ class PenguinInstallCommand extends Command
         $this->info("❤️  Patrocinador: https://github.com/sponsors/kirinthor");
         $this->info("\n");
     }
-
-
 
     public function setupTailwindPenguin(string $packageManagerCommand)
     {
@@ -129,7 +127,7 @@ class PenguinInstallCommand extends Command
     }
     public function installLivewire(string $shouldInstallVolt)
     {
-        $this->info("\nInstalación de Livewire...\n");
+        $this->info("\nInstalando Livewire...\n");
 
         $extra = $shouldInstallVolt == 'Yes'
             ? ' livewire/volt && php artisan volt:install'
@@ -141,42 +139,6 @@ class PenguinInstallCommand extends Command
     }
     public function askForPackageInstaller(): string
     {
-       /* $os = PHP_OS;
-        $findCommand = stripos($os, 'WIN') === 0 ? 'where' : 'which';
-
-        $yarn = Process::run($findCommand . ' yarn')->output();
-        $npm = Process::run($findCommand . ' npm')->output();
-        $bun = Process::run($findCommand . ' bun')->output();
-        $pnpm = Process::run($findCommand . ' pnpm')->output();
-
-        $options = [];
-
-        if (Str::of($yarn)->isNotEmpty()) {
-            $options = array_merge($options, ['yarn add -D' => 'yarn']);
-        }
-
-        if (Str::of($npm)->isNotEmpty()) {
-            $options = array_merge($options, ['npm install --save-dev' => 'npm']);
-        }
-
-        if (Str::of($bun)->isNotEmpty()) {
-            $options = array_merge($options, ['bun i -D' => 'bun']);
-        }
-
-        if (Str::of($pnpm)->isNotEmpty()) {
-            $options = array_merge($options, ['pnpm i -D' => 'pnpm']);
-        }
-
-        if (count($options) == 0) {
-            $this->error("Necesita YARN o NPM o BUN o PNPM instalado.");
-
-            exit;
-        }
-
-        return select(
-            label: 'Instalar con ...',
-            options: $options
-        );*/
         return  select(
             label: 'Instalar con ...',
             options: [
@@ -198,9 +160,10 @@ class PenguinInstallCommand extends Command
 
     public function checkForLaravelVersion(): void
     {
+        $this->info("\nVerificando Compatibilidad ...\n");
+
         if (version_compare(app()->version(), '12.0', '<')) {
             $this->error("❌ Se require Laravel 12 o superior.");
-
             exit;
         }
     }
