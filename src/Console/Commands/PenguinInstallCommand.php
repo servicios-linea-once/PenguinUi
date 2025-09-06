@@ -141,7 +141,7 @@ class PenguinInstallCommand extends Command
     }
     public function askForPackageInstaller(): string
     {
-        $os = PHP_OS;
+       /* $os = PHP_OS;
         $findCommand = stripos($os, 'WIN') === 0 ? 'where' : 'which';
 
         $yarn = Process::run($findCommand . ' yarn')->output();
@@ -176,6 +176,16 @@ class PenguinInstallCommand extends Command
         return select(
             label: 'Instalar con ...',
             options: $options
+        );*/
+        return  select(
+            label: 'Instalar con ...',
+            options: [
+                'yarn add -D' => 'yarn',
+                'npm install --save-dev' => 'npm',
+                'bun i -D' => 'bun',
+                'pnpm i -D' => 'pnpm'
+            ],
+            default: 'npm install --save-dev'
         );
     }
     /**
