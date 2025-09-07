@@ -11,7 +11,7 @@ class DatePicker extends Component
 
     public function __construct(
         public ?string $id = null,
-        public ?string $label = null,
+        public ?string $label = "Fecha",
         public ?array $config = [],
 
 
@@ -108,7 +108,7 @@ class DatePicker extends Component
                             x-model="selectedDate"
                             id="{{$uuid}}"
                             class="w-full rounded-radius border border-outline bg-surface-alt pl-4 pr-10 py-3 leading-none shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
-                             {{ $attributes->merge(['type' => 'date']) }}
+                             {{ $attributes->merge(['type' => 'date','placeholder'=>'Seleccione una Fecha']) }}
                             >
                         <div class="absolute top-0 right-0 px-3 py-2">
                             <svg class="h-6 w-6 text-gray-400"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
