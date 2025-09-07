@@ -62,7 +62,7 @@ class DatePicker extends Component
         }
 
         $config = json_encode(array_merge([
-            'dateFormat' => 'Y-m-d H:i',
+            'dateFormat' => 'Y-m-d',
             'altInput' => false,
             'clickOpens' => ! $this->attributes->has('readonly') || $this->attributes->get('readonly') == false,
             'defaultDate' => '#model#',
@@ -108,7 +108,7 @@ class DatePicker extends Component
                     // We need this extra step to support models arrays. Ex: wire:model="emails.0"  , wire:model="emails.1"
                     $uuid = $uuid . $modelName()
                 @endphp
-                <div class="container mx-auto px-4 py-2 md:py-10" >
+                <div class="container mx-auto px-4 py-3" >
                     <label for="{{$uuid}}" class="font-bold mb-1 text-gray-700 block">Fecha de selección</label>
                     <div class="relative">
                         <input
