@@ -11,8 +11,8 @@ class Select extends Component
 
     public function __construct(
         public ?string $id = null,
-        public ?string $label = null,
-        public ?string $placeholder = null,
+        public string $label,
+        public string $placeholder,
         public Collection|array $options = new Collection(),
     ) {
         $this->uuid = "penguin-" . md5(serialize($this)) . $id;
