@@ -79,7 +79,7 @@ class Select extends Component
                 selectOption: function () {
                     if (!this.open) return this.toggleListboxVisibility()
                     this.value = Object.keys(this.options)[this.focusedOptionIndex]
-                    @this.set('$attributes->wire('model'),this.value)
+                    @this.set('{{$attributes->wire('model')->value}}',this.value)
                     this.closeListbox()
                 },
         
