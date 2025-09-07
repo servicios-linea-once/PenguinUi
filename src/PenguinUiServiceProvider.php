@@ -18,6 +18,7 @@ use PenguinUi\View\Components\Checkbox;
 use PenguinUi\View\Components\Collapse;
 use PenguinUI\Console\Commands\PenguinInstallCommand;
 use PenguinUi\PenguinUi;
+use PenguinUi\View\Components\Select;
 
 class PenguinUiServiceProvider extends ServiceProvider
 {
@@ -54,6 +55,7 @@ class PenguinUiServiceProvider extends ServiceProvider
         Blade::component($prefix . 'carousel', Carousel::class);
         Blade::component($prefix . 'chart', Chart::class);
         Blade::component($prefix . 'checkbox', Checkbox::class);
+        Blade::component($prefix . 'select', Select::class);
 
 
     }
