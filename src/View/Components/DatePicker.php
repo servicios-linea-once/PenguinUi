@@ -56,7 +56,6 @@ class DatePicker extends Component
         $config = json_encode(array_merge([
             'dateFormat' => 'Y-m-d',
             'altInput' => false,
-            'clickOpens' => ! $this->attributes->has('readonly') || $this->attributes->get('readonly') == false,
             'defaultDate' => '#model#',
             'plugins' => ['#plugins#'],
             'disable' => ['#disable#'],
@@ -107,6 +106,7 @@ class DatePicker extends Component
                             x-ref="dateInput" 
                             x-model="selectedDate"
                             id="{{$uuid}}"
+                            readonly
                             class="w-full rounded-radius border border-outline bg-surface-alt pl-4 pr-10 py-3 leading-none shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
                              {{ $attributes->merge(['type' => 'date','placeholder'=>'Seleccione una Fecha']) }}
                             >
