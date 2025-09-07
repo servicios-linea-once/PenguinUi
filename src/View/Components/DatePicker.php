@@ -64,7 +64,7 @@ class DatePicker extends Component
         $config = json_encode(array_merge([
             'dateFormat' => 'Y-m-d H:i',
             'altInput' => true,
-            'altInputClass' => ' ',
+            'altInputClass' => 'w-full rounded-radius border border-outline bg-surface-alt pl-4 pr-10 py-3 leading-none shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium',
             'clickOpens' => ! $this->attributes->has('readonly') || $this->attributes->get('readonly') == false,
             'defaultDate' => '#model#',
             'plugins' => ['#plugins#'],
@@ -118,7 +118,7 @@ class DatePicker extends Component
                             x-model="selectedDate"
                             readonly
                             id="{{$uuid}}"
-                            class="w-full rounded-radius border border-outline bg-surface-alt pl-4 pr-10 py-3 leading-none shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+                            class=""
                             placeholder="Select date">
                         <div class="absolute top-0 right-0 px-3 py-2">
                             <svg class="h-6 w-6 text-gray-400"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
