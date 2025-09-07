@@ -22,7 +22,7 @@ class Calendar extends Component
         public ?array $config = [],
         public ?array $events = [],
     ) {
-        $this->uuid = "pengui-" . md5(serialize($this)) . $id;
+        $this->uuid = "penguin-" . md5(serialize($this)) . $id;
     }
     public function setup(): string
     {
