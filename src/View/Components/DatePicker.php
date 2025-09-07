@@ -12,16 +12,8 @@ class DatePicker extends Component
     public function __construct(
         public ?string $id = null,
         public ?string $label = null,
-        public ?string $icon = null,
-        public ?string $iconRight = null,
-        public ?string $hint = null,
-        public ?string $hintClass = 'fieldset-label',
-        public ?bool $inline = false,
         public ?array $config = [],
 
-        // Slots
-        public mixed $prepend = null,
-        public mixed $append = null,
 
         // Validations
         public ?string $errorField = null,
@@ -109,7 +101,7 @@ class DatePicker extends Component
                     $uuid = $uuid . $modelName()
                 @endphp
                 <div class="container mx-auto px-4 py-3" >
-                    <label for="{{$uuid}}" class="font-bold mb-1 text-gray-700 block">Fecha de selección</label>
+                    <label for="{{$uuid}}" class="font-bold mb-1 text-gray-700 block">{{$label}}</label>
                     <div class="relative">
                         <input
                             x-ref="dateInput" 
