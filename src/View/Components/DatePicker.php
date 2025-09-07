@@ -63,8 +63,7 @@ class DatePicker extends Component
 
         $config = json_encode(array_merge([
             'dateFormat' => 'Y-m-d H:i',
-            'altInput' => true,
-            'altInputClass' => 'w-full rounded-radius border border-outline bg-surface-alt pl-4 pr-10 py-3 leading-none shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium',
+            'altInput' => false,
             'clickOpens' => ! $this->attributes->has('readonly') || $this->attributes->get('readonly') == false,
             'defaultDate' => '#model#',
             'plugins' => ['#plugins#'],
@@ -113,13 +112,12 @@ class DatePicker extends Component
                     <label for="{{$uuid}}" class="font-bold mb-1 text-gray-700 block">Fecha de selección</label>
                     <div class="relative">
                         <input
-                            type="text"
                             x-ref="dateInput" 
                             x-model="selectedDate"
-                            readonly
                             id="{{$uuid}}"
-                            class=""
-                            placeholder="Select date">
+                            class="w-full rounded-radius border border-outline bg-surface-alt pl-4 pr-10 py-3 leading-none shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+                             {{ $attributes->merge(['type' => 'date']) }}
+                            >
                         <div class="absolute top-0 right-0 px-3 py-2">
                             <svg class="h-6 w-6 text-gray-400"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
