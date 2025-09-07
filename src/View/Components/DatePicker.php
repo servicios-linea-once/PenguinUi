@@ -70,7 +70,7 @@ class DatePicker extends Component
 
         $config = str_replace('"#plugins#"', $plugins, $config);
 
-        // Disables
+        // inhabilitar
         $disables = '';
 
         foreach (Arr::get($this->config, 'disable', []) as $disable) {
@@ -79,7 +79,7 @@ class DatePicker extends Component
 
         $config = str_replace('"#disable#"', $disables, $config);
 
-        // Sets default date as current bound model
+        // Establece la fecha predeterminada como modelo de límite actual
         $config = str_replace('"#model#"', '$wire.get("' . $this->modelName() . '")', $config);
 
         return $config;
