@@ -13,6 +13,7 @@ use PenguinUi\View\Components\Breadcrumbs;
 use PenguinUi\View\Components\Button;
 use PenguinUi\View\Components\Calendar;
 use PenguinUi\View\Components\Carousel;
+use PenguinUi\View\Components\Chart;
 use PenguinUi\View\Components\Collapse;
 use PenguinUI\Console\Commands\PenguinInstallCommand;
 use PenguinUi\PenguinUi;
@@ -50,6 +51,7 @@ class PenguinUiServiceProvider extends ServiceProvider
         Blade::component($prefix . 'button', Button::class);
         Blade::component($prefix . 'calendar', Calendar::class);
         Blade::component($prefix . 'carousel', Carousel::class);
+        Blade::component($prefix . 'chart', Chart::class);
 
 
     }
