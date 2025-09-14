@@ -20,6 +20,7 @@ use PenguinUI\Console\Commands\PenguinInstallCommand;
 use PenguinUi\PenguinUi;
 use PenguinUi\View\Components\DatePicker;
 use PenguinUi\View\Components\Drawer;
+use PenguinUi\View\Components\Dropdown;
 use PenguinUi\View\Components\Select;
 
 class PenguinUiServiceProvider extends ServiceProvider
@@ -60,6 +61,7 @@ class PenguinUiServiceProvider extends ServiceProvider
         Blade::component($prefix . 'select', Select::class);
         Blade::component($prefix . 'datepicker', DatePicker::class);
         Blade::component($prefix . 'drawer', Drawer::class);
+        Blade::component($prefix . 'dropdown', Dropdown::class);
 
 
     }
