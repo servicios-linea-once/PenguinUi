@@ -51,7 +51,7 @@ class Dropdown extends Component
                 @endif
                
                 <!-- Dropdown Menu -->
-                <div x-cloak wire:key="dropdown-slot-{{ $uuid }}" x-show="isOpen || openedWithKeyboard" x-transition x-trap="openedWithKeyboard" x-on:click.outside="isOpen = false, openedWithKeyboard = false" x-on:keydown.down.prevent="$focus.wrap().next()" x-on:keydown.up.prevent="$focus.wrap().previous()" @class(["absolute flex w-fit min-w-48 flex-col overflow-hidden rounded-radius border border-outline bg-surface-alt dark:border-outline-dark dark:bg-surface-dark-alt", $positionClass]) role="menu">
+                <div x-cloak wire:key="dropdown-slot-{{ $uuid }}" x-show="isOpen || openedWithKeyboard" x-transition x-trap="openedWithKeyboard" x-on:click.outside="isOpen = false, openedWithKeyboard = false" x-on:keydown.down.prevent="$focus.wrap().next()" x-on:keydown.up.prevent="$focus.wrap().previous()" @class(["absolute flex w-fit min-w-48 flex-col overflow-hidden rounded-radius border border-outline bg-surface-alt dark:border-outline-dark dark:bg-surface-dark-alt z-auto", $positionClass]) role="menu">
                     {{ $slot }}
                 </div>
             </div>
@@ -68,10 +68,10 @@ blade;
                 return 'bottom-11';
                 case 'left':
                     $this->icon = 'icon-[flowbite--caret-left-solid]';
-                    return 'left-full ml-1 top-0';
+                    return 'right-full mr-1 top-0';
                     case 'right':
                         $this->icon = 'icon-[flowbite--caret-right-solid]';
-                        return 'right-full mr-1 top-0';
+                        return 'left-full ml-1 top-0';
                         default:
                            $this->icon = 'icon-[flowbite--caret-down-solid]';
                             return 'top-11 left-0';
