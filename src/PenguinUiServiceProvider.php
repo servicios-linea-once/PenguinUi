@@ -25,7 +25,7 @@ use PenguinUi\View\Components\Select;
 class PenguinUiServiceProvider extends ServiceProvider
 {
     /**
-     * Perform post-registration booting of services.
+     * Realice el arranque de servicios posterior al registro.
      */
     public function boot(): void
     {
@@ -34,15 +34,15 @@ class PenguinUiServiceProvider extends ServiceProvider
 
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
 
-        // Publishing is only necessary when using the CLI.
+        // La publicación solo es necesaria cuando se usa la CLI.
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
         }
     }
     public function registerComponents() {
 
-        // Just rename <x-icon> provided by BladeUI Icons to <x-svg> to not collide with ours
-        Blade::component('BladeUI\Icons\Components\Icon', 'svg');
+        // Solo cambiar el nombre <x-icon> proporcionado por iconos de Bladeui a <x-svg> no chocar con el nuestro
+//        Blade::component('BladeUI\Icons\Components\Icon', 'svg');
 
         $prefix = config('penguin-ui.prefix');
 
@@ -71,19 +71,19 @@ class PenguinUiServiceProvider extends ServiceProvider
     public function registerScopeDirective(): void
     {
         /**
-         * All credits from this blade directive goes to Konrad Kalemba.
-         * Just copied and modified for my very specific use case.
+         * Todos los créditos de esta Directiva de Blade van a Konrad Kalemba.
+         * Acabo de copiar y modificar para mi caso de uso muy específico.
          *
          * https://github.com/konradkalemba/blade-components-scoped-slots
          */
         Blade::directive('scope', function ($expression) {
-            // Split the expression by `top-level` commas (not in parentheses)
+            // Dividir la expresión por las comas `de nivel superior '(no entre paréntesis)
             $directiveArguments = preg_split("/,(?![^\(\(]*[\)\)])/", $expression);
             $directiveArguments = array_map('trim', $directiveArguments);
 
             [$name, $functionArguments] = $directiveArguments;
 
-            // Build function "uses" to inject extra external variables
+            // Función de construcción "uses" para inyectar variables externas adicionales
             $uses = Arr::except(array_flip($directiveArguments), [$name, $functionArguments]);
             $uses = array_flip($uses);
             array_push($uses, '$__env');
@@ -91,10 +91,10 @@ class PenguinUiServiceProvider extends ServiceProvider
             $uses = implode(',', $uses);
 
             /**
-             *  Slot names can`t contains dot , eg: `user.city`.
-             *  So we convert `user.city` to `user___city`
+             *  Los nombres de la ranura no pueden contener punto, eg: `user.city`.
+             *  Entonces convertimos `user.city` a `user___city`
              *
-             *  Later, on component it will be replaced back.
+             *  Más tarde, en el componente se reemplazará.
              */
             $name = str_replace('.', '___', $name);
 
@@ -109,13 +109,13 @@ class PenguinUiServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/penguin-ui.php', 'penguin');
 
-        // Register the service the package provides.
+        // Registre el servicio que proporciona el paquete.
         $this->app->singleton('penguin', function ($app) {
             return new PenguinUi();
         });
     }
     /**
-     * Get the services provided by the provider.
+     * Obtenga los servicios proporcionados por el proveedor.
      *
      * @return array
      */
@@ -128,13 +128,11 @@ class PenguinUiServiceProvider extends ServiceProvider
      */
     protected function bootForConsole(): void
     {
-        // Publishing the configuration file.
+        // Publicar el archivo de configuración.
         $this->publishes([
             __DIR__ . '/../config/penguin-ui.php.php' => config_path('penguin-ui.php'),
         ], 'penguin.config');
 
         $this->commands([PenguinInstallCommand::class]);
-
-//        $this->commands([MaryInstallCommand::class, MaryBootcampCommand::class]);
     }
 }
