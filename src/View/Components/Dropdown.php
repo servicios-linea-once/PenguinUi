@@ -7,6 +7,7 @@ use Illuminate\View\Component;
 class Dropdown extends Component
 {
     public string $uuid;
+    public string $positionClass;
 
     public function __construct(
         public ?string $id = null,
@@ -17,6 +18,7 @@ class Dropdown extends Component
         public mixed $trigger = null
     ) {
         $this->uuid = "penguin-" . md5(serialize($this)) . $id;
+        $this->positionClass = $this->positionClass();
     }
     /**
      * @inheritDoc
@@ -46,7 +48,7 @@ class Dropdown extends Component
                 @endif
                
                 <!-- Dropdown Menu -->
-                <div x-cloak wire:key="dropdown-slot-{{ $uuid }}" x-show="isOpen || openedWithKeyboard" x-transition x-trap="openedWithKeyboard" x-on:click.outside="isOpen = false, openedWithKeyboard = false" x-on:keydown.down.prevent="$focus.wrap().next()" x-on:keydown.up.prevent="$focus.wrap().previous()" @class(["absolute flex w-fit min-w-48 flex-col overflow-hidden rounded-radius border border-outline bg-surface-alt dark:border-outline-dark dark:bg-surface-dark-alt", $positionClass()]) role="menu">
+                <div x-cloak wire:key="dropdown-slot-{{ $uuid }}" x-show="isOpen || openedWithKeyboard" x-transition x-trap="openedWithKeyboard" x-on:click.outside="isOpen = false, openedWithKeyboard = false" x-on:keydown.down.prevent="$focus.wrap().next()" x-on:keydown.up.prevent="$focus.wrap().previous()" @class(["absolute flex w-fit min-w-48 flex-col overflow-hidden rounded-radius border border-outline bg-surface-alt dark:border-outline-dark dark:bg-surface-dark-alt", $positionClass]) role="menu">
                     {{ $slot }}
                 </div>
             </div>
