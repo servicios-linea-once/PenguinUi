@@ -64,16 +64,16 @@ blade;
     {
         switch ($this->position) {
             case 'up':
-                $this->icon = 'icon-[flowbite--caret-up-solid';
+                $this->icon = 'icon-[flowbite--caret-up-solid]';
                 return 'bottom-11';
                 case 'left':
-                    $this->icon = 'icon-[flowbite--caret-left-solid';
+                    $this->icon = 'icon-[flowbite--caret-left-solid]';
                     return 'left-full ml-1 top-0';
                     case 'right':
-                        $this->icon = 'icon-[flowbite--caret-right-solid';
+                        $this->icon = 'icon-[flowbite--caret-right-solid]';
                         return 'right-full mr-1 top-0';
                         default:
-                           $this->icon = 'icon-[flowbite--caret-down-solid';
+                           $this->icon = 'icon-[flowbite--caret-down-solid]';
                             return 'top-11 left-0';
         }
     }
