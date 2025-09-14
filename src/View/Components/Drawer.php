@@ -69,8 +69,8 @@ class Drawer extends Component
                     @if(!$withoutTrapFocus)
                         x-trap="sidebarIsOpen" x-bind:inert="!sidebarIsOpen"
                     @endif
-                    @class([$classRight,$width])
-                    class="fixed top-0 z-50 flex h-svh w-80 shrink-0 flex-col border-l border-outline bg-surface-alt py-3 px-5 transition-transform duration-300 dark:border-outline-dark dark:bg-surface-dark-alt" aria-label="shopping cart" 
+                    @class([$classRight,$width,'fixed top-0 z-50 flex h-svh w-80 shrink-0 flex-col border-l border-outline bg-surface-alt py-3 px-5 transition-transform duration-300 dark:border-outline-dark dark:bg-surface-dark-alt'])
+                    aria-label="shopping cart" 
                     x-transition:enter="transition duration-200 ease-out" 
                     x-transition:enter-end="translate-x-0" 
                     x-transition:enter-start=" translate-x-80" 
