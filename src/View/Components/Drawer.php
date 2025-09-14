@@ -17,17 +17,16 @@ class Drawer extends Component
         public ?bool $right = false,
         public ?string $width = 'w-80',
         public ?string $title = null,
-        public ?bool $separator = false,
-        public ?bool $withCloseButton = false,
-        public ?bool $closeOnEscape = false,
-        public ?bool $withoutTrapFocus = false,
+        public ?bool $withCloseButton = true,
+        public ?bool $closeOnEscape = true,
+        public ?bool $withoutTrapFocus = true,
 
         //Slots
         public ?string $actions = null,
         public ?string $slot = null
     ) {
         $this->uuid = "penguin-" . md5(serialize($this)) . $id;
-        if ($this->right) {$this->classRight = "right-0";} else {$this->classRight = "left-0";};
+        if ($this->right) {$this->classRight = "right-0 border-l";} else {$this->classRight = "left-0 border-r";};
     }
     public function id(): string
     {
@@ -45,17 +44,11 @@ class Drawer extends Component
     public function render(): View|Closure|string
     {
         return <<<'BLADE'
-            <div x-data="{ sidebarIsOpen:    
-                            @if($modelName()->value)
-                                @entangle($modelName())
-                            @else
-                                false
-                            @endif
+            <div x-data="{ sidebarIsOpen: @if($modelName()->value) @entangle($modelName()) @else false @endif
                             ,
                             close() {
                                 this.sidebarIsOpen = false
-                            }
-                             }" 
+                            } }" 
                           
                           @if($closeOnEscape)
                                 @keydown.window.escape="close()"
@@ -69,8 +62,8 @@ class Drawer extends Component
                     @if(!$withoutTrapFocus)
                         x-trap="sidebarIsOpen" x-bind:inert="!sidebarIsOpen"
                     @endif
-                    @class([$classRight,$width,'fixed top-0 z-50 flex h-svh w-80 shrink-0 flex-col border-l border-outline bg-surface-alt py-3 px-5 transition-transform duration-300 dark:border-outline-dark dark:bg-surface-dark-alt'])
-                    aria-label="shopping cart" 
+                    @class([$classRight,$width,'fixed top-0 z-50 flex h-svh w-80 shrink-0 flex-col border-outline bg-surface-alt py-3 px-5 transition-transform duration-300 dark:border-outline-dark dark:bg-surface-dark-alt'])
+                   
                     x-transition:enter="transition duration-200 ease-out" 
                     x-transition:enter-end="translate-x-0" 
                     x-transition:enter-start=" translate-x-80" 
