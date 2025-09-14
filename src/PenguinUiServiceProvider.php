@@ -22,6 +22,7 @@ use PenguinUi\View\Components\DatePicker;
 use PenguinUi\View\Components\Drawer;
 use PenguinUi\View\Components\Dropdown;
 use PenguinUi\View\Components\DropdownItem;
+use PenguinUi\View\Components\Editor;
 use PenguinUi\View\Components\Select;
 
 class PenguinUiServiceProvider extends ServiceProvider
@@ -64,6 +65,7 @@ class PenguinUiServiceProvider extends ServiceProvider
         Blade::component($prefix . 'drawer', Drawer::class);
         Blade::component($prefix . 'dropdown', Dropdown::class);
         Blade::component($prefix . 'dropdown-item', DropdownItem::class);
+        Blade::component($prefix . 'editor-jodit', Editor::class);
 
 
     }
