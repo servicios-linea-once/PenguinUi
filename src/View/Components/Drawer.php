@@ -87,7 +87,7 @@ class Drawer extends Component
                     </div>
             
                     <!-- sidebar Contain -->
-                    <div {{ $attributes->except('wire:model')->class(['flex flex-col gap-2 overflow-y-auto py-4']) }}>{{$slot}}</div>
+                    <div {{ $attributes->except('wire:model')->class(['flex flex-col gap-2 overflow-y-auto py-2 h-full']) }}>{{$slot}}</div>
             
                     <!-- sidebar footer -->
                     @if($actions)

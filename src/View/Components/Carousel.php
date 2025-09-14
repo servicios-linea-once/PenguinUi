@@ -82,8 +82,8 @@ class Carousel extends Component
                     <div x-cloak x-show="currentSlideIndex == index + 1" class="absolute inset-0" x-transition.opacity.duration.1000ms>
                             <!-- Title and description -->
                             <div class="lg:px-32 lg:py-14 absolute inset-0 z-10 flex flex-col items-center justify-end gap-2 bg-linear-to-t from-surface-dark/85 to-transparent px-16 py-12 text-center">
-                                <h3 class="w-full lg:w-[80%] text-balance text-2xl lg:text-3xl font-bold text-on-surface-dark-strong" x-text="slide.title" x-bind:aria-describedby="'slide' + (index + 1) + 'Description'"></h3>
-                                <p class="lg:w-1/2 w-full text-pretty text-sm text-on-surface-dark" x-text="slide.description" x-bind:id="'slide' + (index + 1) + 'Description'"></p>
+                                <h3 class="w-full lg:w-[80%] text-balance text-2xl lg:text-3xl font-bold text-on-surface-dark-strong line-clamp-2" x-text="slide.title" x-bind:aria-describedby="'slide' + (index + 1) + 'Description'"></h3>
+                                <p class="lg:w-1/2 w-full text-pretty text-sm text-on-surface-dark line-clamp-3" x-text="slide.description" x-bind:id="'slide' + (index + 1) + 'Description'"></p>
                                 <template x-if="slide.ctaUrl">
                                     <a :href="slide.ctaUrl">
                                         <x-button type="button" x-cloak x-text="slide.ctaText" variant="outline" color="info"/>
