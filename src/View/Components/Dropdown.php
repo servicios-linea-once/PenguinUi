@@ -40,8 +40,11 @@ class Dropdown extends Component
                      <button type="button" 
                       @class(['inline-flex items-center gap-2 whitespace-nowrap rounded-radius border border-outline bg-surface-alt px-4 py-2 text-sm font-medium tracking-wide transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-outline-strong dark:border-outline-dark dark:bg-surface-dark-alt dark:focus-visible:outline-outline-dark-strong'])
                       x-ref="button" x-on:click="isOpen = ! isOpen" {{ $attributes->merge() }} aria-haspopup="true" x-on:keydown.space.prevent="openedWithKeyboard = true" x-on:keydown.enter.prevent="openedWithKeyboard = true" x-on:keydown.down.prevent="openedWithKeyboard = true" x-bind:class="isOpen || openedWithKeyboard ? 'text-on-surface-strong dark:text-on-surface-dark-strong' : 'text-on-surface dark:text-on-surface-dark'" x-bind:aria-expanded="isOpen || openedWithKeyboard">
-                        {{ $label }}
-                        @if($icon)
+                       @if($position == 'left')
+                            <span @class([$icon])></span>  
+                       @endif
+                       {{ $label }}
+                        @if($position != 'left')
                             <span @class([$icon])></span>  
                         @endif    
                     </button>
@@ -61,12 +64,16 @@ blade;
     {
         switch ($this->position) {
             case 'up':
+                $this->icon = 'icon-[flowbite--caret-up-solid';
                 return 'bottom-11';
                 case 'left':
+                    $this->icon = 'icon-[flowbite--caret-left-solid';
                     return 'left-full ml-1 top-0';
                     case 'right':
+                        $this->icon = 'icon-[flowbite--caret-right-solid';
                         return 'right-full mr-1 top-0';
                         default:
+                           $this->icon = 'icon-[flowbite--caret-down-solid';
                             return 'top-11 left-0';
         }
     }
