@@ -45,7 +45,7 @@ class PenguinInstallCommand extends Command
 
         $this->info("\n");
         $this->info("✅  ¡Está hecho!!");
-        $this->info("❤️  Patrocinador: https://github.com/sponsors/kirinthor");
+        $this->info("❤️  Patrocinador: https://github.com/sponsors/servicios-linea-once");
         $this->info("\n");
     }
 
@@ -129,7 +129,7 @@ class PenguinInstallCommand extends Command
     {
         $this->info("\nInstalando Livewire...\n");
 
-        $extra = $shouldInstallVolt == 'Yes'
+        $extra = $shouldInstallVolt === 'Yes'
             ? ' livewire/volt && php artisan volt:install'
             : '';
 
@@ -174,7 +174,9 @@ class PenguinInstallCommand extends Command
     private function createDirectoryIfNotExists(string $path): void
     {
         if (!file_exists($path)) {
-            mkdir($path, 0777, true);
+            if ( ! mkdir($path, 0777, true) && ! is_dir($path)) {
+                throw new \RuntimeException(sprintf('Directorio "%s" no fue creado', $path));
+            }
         }
     }
     private function copyFile(string $source, string $destination): void
