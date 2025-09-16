@@ -24,7 +24,7 @@ class Editor extends Component
         // Validations
 
     ) {
-        $this->uuid = "pengui-" . md5(serialize($this)) . $id;
+        $this->uuid = "penguin-" . md5(serialize($this)) . $id;
     }
 
     public function modelName(): ?string

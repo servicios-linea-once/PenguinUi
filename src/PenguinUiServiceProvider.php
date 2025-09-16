@@ -23,6 +23,11 @@ use PenguinUi\View\Components\Drawer;
 use PenguinUi\View\Components\Dropdown;
 use PenguinUi\View\Components\DropdownItem;
 use PenguinUi\View\Components\Editor;
+use PenguinUi\View\Components\Errors;
+use PenguinUi\View\Components\File;
+use PenguinUi\View\Components\FilePond;
+use PenguinUi\View\Components\Input;
+use PenguinUi\View\Components\Password;
 use PenguinUi\View\Components\Select;
 
 class PenguinUiServiceProvider extends ServiceProvider
@@ -66,6 +71,11 @@ class PenguinUiServiceProvider extends ServiceProvider
         Blade::component($prefix . 'dropdown', Dropdown::class);
         Blade::component($prefix . 'dropdown-item', DropdownItem::class);
         Blade::component($prefix . 'editor-jodit', Editor::class);
+        Blade::component($prefix . 'errors', Errors::class);
+        Blade::component($prefix . 'file', File::class);
+        Blade::component($prefix . 'file-pond', FilePond::class);
+        Blade::component($prefix . 'input', Input::class);
+        Blade::component($prefix . 'password', Password::class);
 
 
     }
