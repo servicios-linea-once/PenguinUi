@@ -27,6 +27,7 @@ use PenguinUi\View\Components\Errors;
 use PenguinUi\View\Components\File;
 use PenguinUi\View\Components\FilePond;
 use PenguinUi\View\Components\Input;
+use PenguinUi\View\Components\ListItem;
 use PenguinUi\View\Components\Password;
 use PenguinUi\View\Components\Select;
 
@@ -76,6 +77,7 @@ class PenguinUiServiceProvider extends ServiceProvider
         Blade::component($prefix . 'file-pond', FilePond::class);
         Blade::component($prefix . 'input', Input::class);
         Blade::component($prefix . 'password', Password::class);
+        Blade::component($prefix . 'list-item', ListItem::class);
 
 
     }
