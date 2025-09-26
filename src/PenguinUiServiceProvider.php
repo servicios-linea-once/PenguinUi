@@ -33,6 +33,8 @@ use PenguinUi\View\Components\menu\MenuItem;
 use PenguinUi\View\Components\menu\MenuSeparador;
 use PenguinUi\View\Components\menu\MenuSub;
 use PenguinUi\View\Components\Model;
+use PenguinUi\View\Components\Nav\Nav;
+use PenguinUi\View\Components\Nav\NavItem;
 use PenguinUi\View\Components\Password;
 use PenguinUi\View\Components\Select;
 
@@ -88,6 +90,8 @@ class PenguinUiServiceProvider extends ServiceProvider
         Blade::component($prefix . 'menu-sub', MenuSub::class);
         Blade::component($prefix . 'menu-separador', MenuSeparador::class);
         Blade::component($prefix . 'model', Model::class);
+        Blade::component($prefix . 'nav', Nav::class);
+        Blade::component($prefix . 'nav-item', NavItem::class);
 
 
     }
